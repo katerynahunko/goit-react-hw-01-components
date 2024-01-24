@@ -1,4 +1,4 @@
-import { Profile } from './Profile'
+import { Profile } from './Profile';
 
 const profile = {
   username: 'Jacques Gluke',
@@ -14,23 +14,16 @@ const profile = {
 
 export const App = () => {
   return (
-    <div>
-        <Profile
-          avatar={profile.avatar}
-          username={profile.username}
-          tag={profile.tag}
-          location={profile.location}
-        />
-          {/* <img src={user.avatar} alt={user.username} width="80" height="80" />
-      <p>{user.username}</p>
-      <p>{user.tag}</p>
-      <p>{user.location}</p>
-      <ul>
-        {user.stats}
-        <li>{user.stats.followers}</li>
-        <li>{user.stats.views}</li>
-        <li>{user.stats.likes}</li>
-  </ul> */}
-    </div>
+    <Profile
+      key={profile.id}
+      avatar={profile.avatar}
+      username={profile.username}
+      tag={profile.tag}
+      location={profile.location}
+      followers={profile.stats[0]}
+      followersQuantity={profile.stats.followers}
+      viewsQuantity={profile.stats.views}
+      likesQuatity={profile.stats.likes}
+    />
   );
 };
